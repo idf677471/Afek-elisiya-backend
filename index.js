@@ -46,7 +46,7 @@ async function rewriteIdentityIfNeeded(originalResponse) {
 app.post("/gemini", async (req, res) => {
   try {
     const payload = req.body;
-    const apiKey = process.env["gemini-api"];
+    const apiKey = process.env.GEMINI_API_KEY;
 
     const geminiRes = await axios.post(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`,
